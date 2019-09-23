@@ -18,8 +18,12 @@ const config = {
       },
       {
         test: /\.(ts|tsx)?$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/
+        include: path.resolve(__dirname, 'src'),
+        use: [
+            {
+                loader: 'ts-loader'
+            }
+        ]
       }
     ]
   },
